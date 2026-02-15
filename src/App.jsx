@@ -247,13 +247,13 @@ export default function App() {
     />
 
     <GalleryTile
-      src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      src=""
       className="col-span-6 min-h-[170px] md:col-span-3"
       label="Dessert Studio"
     />
 
     <GalleryTile
-      src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80"
+      src="https://png.pngtree.com/thumb_back/fw800/background/20250908/pngtree-elegant-fine-dining-restaurant-scene-delicious-food-wine-glasses-image_19017352.webp"
       className="col-span-12 min-h-[170px] md:col-span-4"
       label="Corporate Fine Dining"
     />
@@ -265,7 +265,7 @@ export default function App() {
     />
 
     <GalleryTile
-      src="https://images.unsplash.com/photo-1514516870926-2059899a7b0a?w=1600&q=80"
+      src="https://img.freepik.com/premium-photo/pleasant-woman-giving-lunch-school-girl-cafeteria_392895-449898.jpg"
       className="col-span-12 min-h-[170px] md:col-span-4"
       label="Grand Service Setup"
     />
