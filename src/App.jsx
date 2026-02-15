@@ -315,11 +315,11 @@ export default function App() {
         </a>
 
         <a
-          href="#cuisines"
-          className="zv-bubble-btn inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm text-white/90 transition hover:bg-white/5"
-        >
-          View Menus
-        </a>
+  href="#cuisines"
+  className="zv-bubble-btn inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm text-white/90 transition hover:bg-white/5"
+>
+  <span className="zv-bubble-text">View Menus</span>
+</a>
       </div>
     </div>
   </div>
