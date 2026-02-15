@@ -274,7 +274,7 @@ export default function App() {
 </section>
 
 {/* PREMIUM TRANSITION STRIP (between Gallery and Reviews) */}
-<section className="relative py-10">
+<section className="relative py-10 mt-10 ">
   {/* subtle background: NOT solid black */}
   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(215,183,122,0.16),transparent_55%)]" />
@@ -300,7 +300,7 @@ export default function App() {
       </div>
 
       {/* CTA + mini proof */}
-      <div className="flex flex-wrap items-center justify-start gap-3 md:justify-end">
+      <div className="relative overflow-visible py-10 mt-10 flex flex-wrap items-center justify-start gap-3 md:justify-end">
         <div className="hidden md:flex items-center gap-3 text-xs text-white/60">
           <span className="rounded-full border border-white/12 bg-white/5 px-4 py-2">500+ Events</span>
           <span className="rounded-full border border-white/12 bg-white/5 px-4 py-2">50+ Menus</span>
@@ -309,14 +309,14 @@ export default function App() {
 
         <a
           href="#contact"
-          className="inline-flex items-center justify-center rounded-2xl border border-[#d7b77a]/55 bg-[#d7b77a]/12 px-6 py-3 text-sm text-white transition hover:bg-[#d7b77a]/16"
+          className="zv-bubble-btn inline-flex items-center justify-center rounded-2xl border border-[#d7b77a]/55 bg-[#d7b77a]/12 px-6 py-3 text-sm text-white transition hover:bg-[#d7b77a]/12"
         >
           Get Quote
         </a>
 
         <a
           href="#cuisines"
-          className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm text-white/90 transition hover:bg-white/10"
+          className="zv-bubble-btn inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm text-white/90 transition hover:bg-white/5"
         >
           View Menus
         </a>
