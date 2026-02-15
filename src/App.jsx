@@ -115,7 +115,7 @@ export default function App() {
               </a>
               <a
                 href="#gallery"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/25 bg-black/30 px-6 py-3 text-sm text-white/90 backdrop-blur transition hover:bg-black/40"
+                className="zv-bubble-btn inline-flex items-center justify-center rounded-2xl border border-white/25 bg-black/30 px-6 py-3 text-sm text-white/90 backdrop-blur transition hover:bg-black/30"
               >
                 View Gallery
               </a>
