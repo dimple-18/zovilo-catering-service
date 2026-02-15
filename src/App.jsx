@@ -311,7 +311,7 @@ export default function App() {
           href="#contact"
           className="zv-bubble-btn inline-flex items-center justify-center rounded-2xl border border-[#d7b77a]/55 bg-[#d7b77a]/12 px-6 py-3 text-sm text-white transition hover:bg-[#d7b77a]/12"
         >
-          Get Quote
+          <span className="zv-bubble-text">Get Quote</span>
         </a>
 
         <a

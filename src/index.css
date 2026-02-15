@@ -1,9 +1,14 @@
 @import "tailwindcss";
-
-/* ZOVILO — white bubble hover (no color change) */
+/* ZOVILO — white bubble hover (visible + no color change) */
 .zv-bubble-btn {
   position: relative;
-  overflow: visible; /* allow bubbles to show outside */
+  overflow: visible;
+  isolation: isolate; /* creates safe stacking context */
+}
+
+.zv-bubble-btn .zv-bubble-text {
+  position: relative;
+  z-index: 3; /* keep text above bubbles */
 }
 
 .zv-bubble-btn::before,
@@ -14,10 +19,11 @@
   left: 50%;
   height: 100%;
   transform: translateX(-50%);
-  z-index: -1; /* behind button */
+  z-index: 2; /* IMPORTANT: visible above background */
   background-repeat: no-repeat;
   pointer-events: none;
   opacity: 0;
+  filter: drop-shadow(0 6px 18px rgba(255, 255, 255, 0.12));
 }
 
 .zv-bubble-btn:hover::before {
