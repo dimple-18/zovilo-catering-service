@@ -140,22 +140,29 @@ export default function App() {
           </div>
 
           {/* Trust stats glass row */}
-          <div className="mt-10 grid gap-3 md:grid-cols-4">
-            {[
-              ["500+", "Events Served"],
-              ["10+", "Years Expertise"],
-              ["50+", "Menu Styles"],
-              ["5★", "Client Satisfaction"],
-            ].map(([num, label]) => (
-              <div
-                key={label}
-                className="rounded-2xl border border-white/20 bg-black/25 p-5 backdrop-blur"
-              >
-                <div className="text-xl font-semibold">{num}</div>
-                <div className="mt-1 text-xs text-white/75">{label}</div>
-              </div>
-            ))}
-          </div>
+          {/* Signature Highlights (replaces empty stat boxes) */}
+<div className="mt-10 grid gap-4 md:grid-cols-4">
+  <HighlightCard
+    title="Bespoke Menus"
+    desc="Curated for your guests — Jain, Vegan, Kids & more."
+    chips={["Tasting", "Diet Options"]}
+  />
+  <HighlightCard
+    title="Live Counters"
+    desc="Chaat • Pasta • Kebabs • Dessert Studio — premium setup."
+    chips={["Interactive", "Fast Flow"]}
+  />
+  <HighlightCard
+    title="Luxury Presentation"
+    desc="Elegant plating, buffet styling, and thematic decor."
+    chips={["Premium Setup", "Brand Look"]}
+  />
+  <HighlightCard
+    title="White-Glove Service"
+    desc="Trained staff, smooth coordination & VIP handling."
+    chips={["Hospitality", "VIP Care"]}
+  />
+</div>
         </div>
       </section>
 
@@ -539,6 +546,31 @@ function SectionHead({ title, desc }) {
     <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
       <h2 className="text-[22px] font-semibold tracking-[-0.01em]">{title}</h2>
       <p className="max-w-2xl text-sm leading-6 text-white/70">{desc}</p>
+    </div>
+  );
+}
+
+function HighlightCard({ title, desc, chips = [] }) {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl border border-white/15 bg-black/20 p-5 backdrop-blur-xl transition hover:border-[#d7b77a]/35">
+      {/* subtle gold glow on hover */}
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,rgba(215,183,122,0.18),transparent_60%)]" />
+
+      <div className="relative">
+        <div className="text-sm font-semibold text-white/95">{title}</div>
+        <div className="mt-2 text-xs leading-5 text-white/70">{desc}</div>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {chips.map((c) => (
+            <span
+              key={c}
+              className="rounded-full border border-white/12 bg-white/5 px-3 py-1 text-[11px] text-white/75"
+            >
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
