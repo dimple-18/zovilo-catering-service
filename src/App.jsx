@@ -195,7 +195,7 @@ export default function App() {
   <img
     src={cuisineBg}
     alt="Luxury cuisine background"
-    className="absolute inset-0 h-full w-full object-cover"
+    className="absolute inset-0 h-full w-full object-cover object-top"
   />
 
   {/* Overlay */}
@@ -247,7 +247,7 @@ export default function App() {
     />
 
     <GalleryTile
-      src=""
+      src="https://t3.ftcdn.net/jpg/01/76/33/14/360_F_176331484_nLHY9EoW0ETwPZaS9OBXPGbCJhT70GZe.jpg"
       className="col-span-6 min-h-[170px] md:col-span-3"
       label="Dessert Studio"
     />
@@ -273,84 +273,250 @@ export default function App() {
   </div>
 </section>
 
-      {/* REVIEWS */}
-      <section id="reviews" className="mx-auto max-w-6xl px-5 py-12">
-        <SectionHead
-          title="Client Words"
-          desc="Luxury clients trust short, elegant, real testimonials."
-        />
-        <div className="grid gap-4 md:grid-cols-2">
-          <QuoteCard
-            quote="The food became the highlight of our wedding. Presentation was premium and the service was flawless."
-            by="Riya & Karan, Mumbai"
-          />
-          <QuoteCard
-            quote="Live counters were managed beautifully and guests kept coming back. Super classy experience."
-            by="Aanya S., Bandra"
-          />
+{/* PREMIUM TRANSITION STRIP (between Gallery and Reviews) */}
+<section className="relative py-10">
+  {/* subtle background: NOT solid black */}
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(215,183,122,0.16),transparent_55%)]" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_65%,rgba(255,255,255,0.10),transparent_55%)]" />
+
+  <div className="relative mx-auto max-w-6xl px-5">
+    <div className="grid gap-5 md:grid-cols-[1.1fr_.9fr] md:items-center">
+      {/* Text */}
+      <div>
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#d7b77a]/35 bg-[#d7b77a]/10 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#f2dfb6]">
+          <span className="h-2 w-2 rounded-full bg-[#d7b77a]" />
+          Trusted for luxury celebrations
         </div>
-      </section>
 
-      {/* CONTACT CTA */}
-      <section id="contact" className="mx-auto max-w-6xl px-5 py-14">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-[28px] border border-[#d7b77a]/25 bg-gradient-to-b from-[#d7b77a]/14 to-black/30 p-7 backdrop-blur md:flex-row md:items-center md:p-9">
-          <div>
-            <h3 className="text-2xl font-semibold">
-              Planning a luxury wedding or premium event?
-            </h3>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-white/80">
-              Share your date, guest count, venue area, and cuisine preferences —
-              we’ll recommend the perfect menu & setup.
-            </p>
+        <h3 className="mt-3 text-2xl font-semibold tracking-[-0.01em]">
+          A premium experience,{" "}
+          <span className="text-[#f2dfb6]">from first bite to final service</span>.
+        </h3>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-xs text-white/80">
-              <span className="rounded-full border border-white/20 bg-black/25 px-4 py-2 backdrop-blur">
-                Mumbai • Navi Mumbai • Thane
-              </span>
-              <span className="rounded-full border border-white/20 bg-black/25 px-4 py-2 backdrop-blur">
-                Weddings • Corporate • Private
-              </span>
-            </div>
-          </div>
+        <p className="mt-2 max-w-xl text-sm leading-6 text-white/70">
+          Consistent taste • Elegant counters • Smooth guest flow — designed for weddings and high-profile events.
+        </p>
+      </div>
 
-          <div className="flex flex-wrap gap-3">
-            <button
-              onClick={() => alert("Next: connect to a lead form / email")}
-              className="rounded-2xl border border-white/25 bg-black/25 px-6 py-3 text-sm text-white/90 backdrop-blur transition hover:bg-black/35"
-            >
-              Request a Callback
-            </button>
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl border border-[#d7b77a]/55 bg-[#d7b77a]/25 px-6 py-3 text-sm backdrop-blur transition hover:bg-[#d7b77a]/30"
-            >
-              WhatsApp Now
-            </a>
-          </div>
+      {/* CTA + mini proof */}
+      <div className="flex flex-wrap items-center justify-start gap-3 md:justify-end">
+        <div className="hidden md:flex items-center gap-3 text-xs text-white/60">
+          <span className="rounded-full border border-white/12 bg-white/5 px-4 py-2">500+ Events</span>
+          <span className="rounded-full border border-white/12 bg-white/5 px-4 py-2">50+ Menus</span>
+          <span className="rounded-full border border-white/12 bg-white/5 px-4 py-2">5★ Focus</span>
         </div>
-      </section>
+
+        <a
+          href="#contact"
+          className="inline-flex items-center justify-center rounded-2xl border border-[#d7b77a]/55 bg-[#d7b77a]/12 px-6 py-3 text-sm text-white transition hover:bg-[#d7b77a]/16"
+        >
+          Get Quote
+        </a>
+
+        <a
+          href="#cuisines"
+          className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm text-white/90 transition hover:bg-white/10"
+        >
+          View Menus
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* REVIEWS */}
+      <section
+  id="reviews"
+  className="relative py-20"
+  style={{
+    backgroundImage:
+      "url('https://thumbs.dreamstime.com/b/salmon-tatrare-small-plates-catering-event-banquet-food-155459361.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* Dark + Gold Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-[#07070A]" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(215,183,122,0.15),transparent_60%)]" />
+
+  <div className="relative mx-auto max-w-6xl px-5">
+
+    <SectionHead
+      title="Client Words"
+      desc="Luxury celebrations deserve unforgettable catering experiences."
+    />
+
+    <div className="grid gap-6 md:grid-cols-2">
+
+      <ReviewCard
+        quote="The food became the highlight of our wedding. Presentation was premium and the service was flawless."
+        name="Riya & Karan"
+        location="Mumbai"
+      />
+
+      <ReviewCard
+        quote="Live counters were managed beautifully and guests kept coming back. Super classy experience."
+        name="Aanya Shah"
+        location="Bandra"
+      />
+
+      <ReviewCard
+        quote="From tasting session to final execution, everything was handled with perfection. Truly luxury service."
+        name="Vikram Malhotra"
+        location="Navi Mumbai"
+      />
+
+      <ReviewCard
+        quote="Every guest appreciated the menu variety and elegance. Zovilo made our event unforgettable."
+        name="Neha & Arjun"
+        location="Thane"
+      />
+
+    </div>
+  </div>
+</section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-10">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 text-sm text-white/70">
-          <div>
-            <div className="text-xs font-extrabold tracking-[0.28em] text-white/85">
-              ZOVILO
-            </div>
-            <div className="mt-1">Luxury Wedding & Event Caterers • Mumbai</div>
-          </div>
+      <footer className="relative overflow-hidden border-t border-white/10">
+  {/* subtle glow */}
+  <div className="pointer-events-none absolute inset-0">
+    <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#d7b77a]/12 blur-[90px]" />
+    <div className="absolute right-[-90px] bottom-[-90px] h-80 w-80 rounded-full bg-white/8 blur-[110px]" />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#07070A] to-black" />
+  </div>
 
-          <div className="flex flex-wrap gap-4">
-            <a className="hover:text-[#f2dfb6]" href="#experiences">Experiences</a>
-            <a className="hover:text-[#f2dfb6]" href="#gallery">Gallery</a>
-            <a className="hover:text-[#f2dfb6]" href="#contact">Contact</a>
-          </div>
-
-          <div>© {new Date().getFullYear()} Zovilo. All rights reserved.</div>
+  <div className="relative mx-auto max-w-6xl px-5 py-14">
+    {/* Premium CTA strip */}
+    <div className="mb-10 grid gap-5 rounded-[28px] border border-[#d7b77a]/25 bg-white/5 p-6 backdrop-blur-xl md:grid-cols-[1.2fr_.8fr] md:items-center md:p-8">
+      <div>
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#d7b77a]/35 bg-[#d7b77a]/10 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#f2dfb6]">
+          <span className="h-2 w-2 rounded-full bg-[#d7b77a]" />
+          Premium Catering • Mumbai
         </div>
-      </footer>
+
+        <h3 className="mt-4 text-2xl font-semibold tracking-[-0.01em]">
+          Make your celebration unforgettable with{" "}
+          <span className="text-[#f2dfb6]">ZOVILO</span>.
+        </h3>
+        <p className="mt-2 text-sm leading-6 text-white/70">
+          Share your date, guest count, and venue area — we’ll suggest a luxury menu & setup that fits your event.
+        </p>
+      </div>
+
+      <div className="flex flex-wrap gap-3 md:justify-end">
+        <a
+          href="#contact"
+          className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm text-white/90 transition hover:bg-white/10"
+        >
+          Request a Callback
+        </a>
+        <a
+          href={waLink}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-2xl border border-[#d7b77a]/50 bg-[#d7b77a]/15 px-6 py-3 text-sm text-white transition hover:bg-[#d7b77a]/20"
+        >
+          WhatsApp Now
+        </a>
+      </div>
+    </div>
+
+    {/* Main footer grid */}
+    <div className="grid gap-10 md:grid-cols-4">
+      {/* Brand */}
+      <div className="md:col-span-2">
+        <div className="flex items-center gap-3">
+          <div className="grid h-12 w-12 place-items-center rounded-2xl border border-white/15 bg-white/5">
+            <span className="text-sm font-black tracking-widest text-[#f2dfb6]">ZV</span>
+          </div>
+          <div>
+            <div className="text-[13px] font-extrabold tracking-[0.28em]">ZOVILO</div>
+            <div className="text-xs text-white/60">Luxury Wedding & Event Catering</div>
+          </div>
+        </div>
+
+        <p className="mt-4 max-w-xl text-sm leading-7 text-white/65">
+          Five-star culinary experiences for weddings and premium events — bespoke menus, live counters,
+          elegant presentation, and flawless hospitality.
+        </p>
+
+        {/* mini highlights */}
+        <div className="mt-5 flex flex-wrap gap-2">
+          {["Bespoke Menus", "Live Counters", "Luxury Presentation", "White-glove Service"].map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-white/12 bg-white/5 px-4 py-2 text-xs text-white/70"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Quick links */}
+      <div>
+        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">
+          Quick Links
+        </div>
+        <div className="mt-4 grid gap-2 text-sm text-white/70">
+          <a className="w-fit rounded-lg px-2 py-1 hover:bg-white/5 hover:text-white" href="#experiences">
+            Experiences
+          </a>
+          <a className="w-fit rounded-lg px-2 py-1 hover:bg-white/5 hover:text-white" href="#cuisines">
+            Cuisines
+          </a>
+          <a className="w-fit rounded-lg px-2 py-1 hover:bg-white/5 hover:text-white" href="#gallery">
+            Gallery
+          </a>
+          <a className="w-fit rounded-lg px-2 py-1 hover:bg-white/5 hover:text-white" href="#reviews">
+            Reviews
+          </a>
+          <a className="w-fit rounded-lg px-2 py-1 hover:bg-white/5 hover:text-white" href="#contact">
+            Contact
+          </a>
+        </div>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">
+          Contact
+        </div>
+
+        <div className="mt-4 grid gap-3 text-sm text-white/70">
+          <div className="rounded-2xl border border-white/12 bg-white/5 p-4">
+            <div className="text-xs uppercase tracking-[0.16em] text-white/55">Call / WhatsApp</div>
+            <div className="mt-1 text-white/85">+91 XXXXXXXXXX</div>
+          </div>
+
+          <div className="rounded-2xl border border-white/12 bg-white/5 p-4">
+            <div className="text-xs uppercase tracking-[0.16em] text-white/55">Email</div>
+            <div className="mt-1 text-white/85">hello@zovilo.com</div>
+          </div>
+
+          <div className="rounded-2xl border border-white/12 bg-white/5 p-4">
+            <div className="text-xs uppercase tracking-[0.16em] text-white/55">Service Areas</div>
+            <div className="mt-1 text-white/85">Mumbai • Navi Mumbai • Thane</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Bottom bar */}
+    <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/55">
+      <div>© {new Date().getFullYear()} Zovilo. All rights reserved.</div>
+
+      <div className="flex flex-wrap items-center gap-3">
+        <a className="hover:text-[#f2dfb6]" href="#contact">Privacy</a>
+        <span className="text-white/25">•</span>
+        <a className="hover:text-[#f2dfb6]" href="#contact">Terms</a>
+        <span className="text-white/25">•</span>
+        <a className="hover:text-[#f2dfb6]" href="#contact">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
       {/* Floating WhatsApp */}
       <a
@@ -469,6 +635,28 @@ function QuoteCard({ quote, by }) {
       <p className="text-sm leading-7 text-white/90">“{quote}”</p>
       <div className="mt-3 text-xs tracking-[0.12em] text-[#f2dfb6]">
         — {by}
+      </div>
+    </div>
+  );
+}
+function ReviewCard({ quote, name, location }) {
+  return (
+    <div className="group relative overflow-hidden rounded-[26px] border border-white/20 bg-black/30 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-[#d7b77a]/40">
+
+      {/* Soft gold hover glow */}
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,rgba(215,183,122,0.25),transparent_60%)]" />
+
+      <p className="relative text-sm leading-7 text-white/90">
+        “{quote}”
+      </p>
+
+      <div className="relative mt-5">
+        <div className="text-sm font-semibold text-[#f2dfb6]">
+          {name}
+        </div>
+        <div className="text-xs tracking-[0.14em] text-white/70">
+          {location}
+        </div>
       </div>
     </div>
   );
